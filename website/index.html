@@ -27,7 +27,7 @@
             background-color: var(--bg-color);
             color: var(--text-primary);
             overflow-x: hidden;
-            position: relative; /* Added for background shapes */
+            position: relative;  /* Added for background shapes */
         }
         .font-heading { font-family: 'Playfair Display', serif; }
 
@@ -150,12 +150,12 @@
         /* --- Background Shapes --- */
         .background-shape {
             position: absolute;
-            background-color: var(--accent-pink); /* Use accent color */
-            opacity: 0.08; /* Very subtle */
-            border-radius: 50%; /* Make them circles */
-            filter: blur(50px); /* Soft blur effect */
-            z-index: -1; /* Send them to the back */
-            will-change: transform; /* For smooth animations if added later */
+            background-color: var(--accent-pink);  /* Use accent color */
+            opacity: 0.08;  /* Very subtle */
+            border-radius: 50%;  /* Make them circles */
+            filter: blur(50px);  /* Soft blur effect */
+            z-index: -1;  /* Send them to the back */
+            will-change: transform;  /* For smooth animations if added later */
         }
 
         .shape-1 {
@@ -207,7 +207,7 @@
         /* For smaller screens, adjust shape sizes and positions */
         @media (max-width: 768px) {
             .background-shape {
-                opacity: 0.05; /* Even more subtle on mobile */
+                opacity: 0.05;  /* Even more subtle on mobile */
                 filter: blur(30px);
             }
             .shape-1 { width: 100px; height: 100px; top: 10%; left: -15%; }
@@ -291,7 +291,7 @@
             </div>
             <div class="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
                 <!-- Professional Portfolio Card -->
-                <a href="depi.html" class="portfolio-card animated-item block text-center p-6">
+                <a href="depi/depi.html" class="portfolio-card animated-item block text-center p-6">
                     <div class="text-5xl mb-4 text-accent-pink-dark">
                         <i class="fas fa-briefcase animate-bounce" style="animation-duration: 4s;"></i>
                     </div>
@@ -301,7 +301,7 @@
                 </a>
 
                 <!-- College Portfolio Card -->
-                <a href="college.html" class="portfolio-card animated-item block text-center p-6" style="animation-delay: 0.2s;">
+                <a href="college/college.html" class="portfolio-card animated-item block text-center p-6" style="animation-delay: 0.2s;">
                     <div class="text-5xl mb-4 text-accent-pink-dark">
                         <i class="fas fa-graduation-cap animate-bounce" style="animation-duration: 4s; animation-delay: 0.2s;"></i>
                     </div>
@@ -311,7 +311,7 @@
                 </a>
 
                 <!-- Internship Portfolio Card -->
-                <a href="internship.html" class="portfolio-card animated-item block text-center p-6" style="animation-delay: 0.4s;">
+                <a href="internship/internship.html" class="portfolio-card animated-item block text-center p-6" style="animation-delay: 0.4s;">
                     <div class="text-5xl mb-4 text-accent-pink-dark">
                         <i class="fas fa-laptop-code animate-bounce" style="animation-duration: 4s; animation-delay: 0.4s;"></i>
                     </div>
