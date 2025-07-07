@@ -3,13 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Internship Portfolio: IT &amp; Database Experiences</title>
+    <title>Mariam Mohamed Kamal: Professional Portfolio</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <!-- Font Awesome for icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
         :root {
             --bg-color: #FFF5F7;
@@ -37,22 +35,13 @@
             to { opacity: 1; transform: translateY(0); }
         }
         @keyframes glow {
-            0%, 100% { text-shadow: 0 0 2px var(--accent-pink), 0 0 5px var(--accent-pink); } /* Reduced glow */
-            50% { text-shadow: 0 0 10px var(--accent-pink-dark), 0 0 15px var(--accent-pink-dark); } /* Reduced glow */
+            0%, 100% { text-shadow: 0 0 5px var(--accent-pink), 0 0 10px var(--accent-pink); }
+            50% { text-shadow: 0 0 20px var(--accent-pink-dark), 0 0 30px var(--accent-pink-dark); }
         }
         @keyframes grow { from { width: 0%; } to { width: 100%; } }
         @keyframes float {
             0% { transform: translate(0, 0); }
             100% { transform: translate(20px, 30px); }
-        }
-        @keyframes spin {
-            from { transform: rotate(0deg); }
-            to { transform: rotate(360deg); }
-        }
-        @keyframes pulse {
-            0% { transform: scale(1); opacity: 1; }
-            50% { transform: scale(1.05); opacity: 0.8; }
-            100% { transform: scale(1); opacity: 1; }
         }
 
         .animated-item {
@@ -147,6 +136,30 @@
         #typewriter-cursor { animation: glow 1.5s ease-in-out infinite; }
         .hero-paragraph { opacity: 0; transform: translateY(20px); transition: opacity 0.5s 2.8s, transform 0.5s 2.8s; }
 
+        /* --- DEPI Journey Timeline --- */
+        .timeline { position: relative; max-width: 1000px; margin: 0 auto; }
+        .timeline::after {
+            content: ''; position: absolute; width: 3px;
+            background-color: var(--scroll-bar-bg);
+            top: 0; bottom: 0; left: 50%; margin-left: -1.5px;
+        }
+        .timeline-item { padding: 10px 40px; position: relative; width: 50%; }
+        .timeline-item.left { left: 0; }
+        .timeline-item.right { left: 50%; }
+        .timeline-item::after { /* The dot on the line */
+            content: ''; position: absolute; width: 16px; height: 16px;
+            right: -8px; background-color: white; border: 4px solid var(--accent-pink);
+            top: 28px; border-radius: 50%; z-index: 1;
+            transition: transform 0.3s ease;
+        }
+        .timeline-item.right::after { left: -8px; }
+        .timeline-item:hover::after { transform: scale(1.2); }
+        .timeline-content {
+            padding: 20px; background-color: white; border-radius: 1rem;
+            border: 1px solid var(--scroll-bar-bg);
+            box-shadow: 0 4px 15px -3px rgba(230, 164, 180, 0.1);
+        }
+        
         /* --- Expandable Content (Accordion) --- */
         .expand-button {
             width: 100%;
@@ -251,257 +264,310 @@
             .shape-4 { width: 120px; height: 120px; bottom: 10%; right: -10%; }
             .shape-5 { width: 90px; height: 90px; top: 70%; left: -10%; }
         }
-
-        /* Carousel specific styles */
-        .carousel-container {
-            position: relative;
-            width: 100%;
-            overflow: hidden;
-            border-radius: 0 0 1.5rem 1.5rem; /* Matches project card border-radius */
-        }
-
-        .carousel-track {
-            display: flex;
-            transition: transform 0.5s ease-in-out;
-        }
-
-        .carousel-img {
-            width: 100%;
-            flex-shrink: 0; /* Ensures images don't shrink */
-            display: block; /* Removes extra space below image */
-            object-fit: cover; /* Ensures image covers the area */
-        }
-
-        .carousel-btn {
-            position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
-            background-color: rgba(255, 255, 255, 0.6);
-            border-radius: 50%;
-            padding: 0.5rem;
-            cursor: pointer;
-            z-index: 10;
-            transition: background-color 0.3s ease;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-        }
-
-        .carousel-btn:hover {
-            background-color: rgba(255, 255, 255, 0.9);
-        }
-
-        .carousel-btn.prev-btn {
-            left: 1rem;
-        }
-
-        .carousel-btn.next-btn {
-            right: 1rem;
-        }
-
-        .carousel-dots {
-            position: absolute;
-            bottom: 1rem;
-            left: 50%;
-            transform: translateX(-50%);
-            display: flex;
-            gap: 0.5rem;
-            z-index: 10;
-        }
-
-        .dot {
-            width: 0.75rem;
-            height: 0.75rem;
-            background-color: rgba(255, 255, 255, 0.7);
-            border-radius: 50%;
-            cursor: pointer;
-            transition: background-color 0.3s ease, transform 0.3s ease;
-        }
-
-        .dot.active {
-            background-color: var(--accent-pink);
-            transform: scale(1.2);
-        }
         
     </style>
 </head>
 <body class="antialiased">
     
-    <div id="preloader"><span class="loader-text glowing-text">INTERNSHIPS</span></div>
+    <div id="preloader"><span class="loader-text glowing-text">MMK</span></div>
     <div id="scroll-progress"></div>
 
     <header class="header">
         <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
-            <a href="#" class="text-2xl font-heading font-bold text-primary hover:text-[var(--accent-pink)] transition duration-300">My Internship Portfolio</a>
+            <!-- Updated href to point to the specified external domain -->
+            <a href="https://roma-gilt.vercel.app" class="text-2xl font-heading font-bold text-primary hover:text-[var(--accent-pink)] transition duration-300">Home Page</a>
             <div class="hidden md:flex space-x-8 text-primary font-medium">
-                <a href="#introduction" class="nav-link nav-item">Introduction</a>
-                <a href="#internships" class="nav-link nav-item">Internships</a>
-                <a href="#skills-gained" class="nav-link nav-item">Skills</a>
+                <a href="#depi-journey" class="nav-link nav-item">DEPI Journey</a>
+                <a href="#skills" class="nav-link nav-item">Technical Skills</a>
+                <a href="#scm-concepts" class="nav-link nav-item">Applied Strategy</a>
+                <a href="#projects" class="nav-link nav-item">Projects</a>
                 <a href="#contact" class="nav-link nav-item">Contact</a>
             </div>
-            <a href="https://www.linkedin.com/in/mariam-mohamed-kamal25/" target="_blank" class="btn-primary hidden md:inline-block">LinkedIn</a>
+            <a href="https://www.linkedin.com/in/mariam-mohamed-kamal25/" target="_blank" class="btn-primary hidden md:inline-block">View LinkedIn</a>
         </nav>
     </header>
 
     <main class="container mx-auto px-6 py-12 md:py-20">
 
-        <section id="introduction" class="text-center mb-24 md:mb-32 pt-10">
-            <div class="max-w-4xl mx-auto skill-card p-6 md:p-10">
-                <img src="https://placehold.co/150x150/E6A4B4/4A2731?text=💼" alt="Internship Icon" class="w-64 h-64 rounded-full mx-auto mb-6 border-4 border-white shadow-lg transition-transform duration-500 hover:scale-110 animated-item">
+        <section id="hero" class="text-center mb-24 md:mb-32 pt-10">
+            <div class="max-w-4xl mx-auto skill-card p-6 md:p-10"> <!-- Added skill-card styling here -->
+                <img src="https://placehold.co/150x150/E6A4B4/4A2731?text=MMK" alt="Mariam Mohamed Kamal" class="w-40 h-40 rounded-full mx-auto mb-6 border-4 border-white shadow-lg transition-transform duration-500 hover:scale-110 animated-item">
                 <h1 class="text-5xl md:text-7xl font-heading font-extrabold leading-tight mt-4 text-gradient glowing-text" id="hero-title">
                     <span id="typewriter"></span><span id="typewriter-cursor">|</span>
                 </h1>
                 <p class="mt-8 text-lg text-primary/80 leading-relaxed max-w-3xl mx-auto hero-paragraph">
-                    This portfolio highlights my practical experiences through various internships, focusing on real-world application of IT, database management, &amp; business intelligence concepts. These opportunities have significantly broadened my technical skill set &amp; provided invaluable insights into enterprise-level systems &amp; operations.
+                    This portfolio documents my comprehensive professional development through the Digital Egypt Pioneers Initiative (DEPI), a selective 9-month scholarship program administered by the Egyptian Ministry of Communications &amp; Information Technology. Through specialized training in Supply Chain Management &amp; <span class="text-gradient font-semibold">Oracle ERP systems</span>, combined with strategic soft skills development, I have developed the expertise necessary to lead digital transformation initiatives within industrial organizations.
                 </p>
-                <div class="mt-10"><a href="#internships" class="btn-primary text-lg">Explore My Internships</a></div>
+                <div class="mt-10"><a href="#projects" class="btn-primary text-lg">Explore My Work</a></div>
             </div>
         </section>
 
-        <section id="internships" class="mb-20 md:mb-28 scroll-mt-24 animated-item">
+        <section id="depi-journey" class="mb-20 md:mb-28 scroll-mt-24 animated-item">
             <div class="text-center mb-16">
-                <h2 class="text-4xl md:text-5xl font-heading font-bold text-primary">
-                    My Internship Experiences <i class="fas fa-cogs text-accent-pink-dark ml-4 animate-spin" style="animation-duration: 4s;"></i>
-                </h2>
-                <p class="mt-5 text-lg text-primary/70 max-w-3xl mx-auto">Hands-on learning &amp; practical application in diverse IT environments.</p>
+                 <h2 class="text-4xl md:text-5xl font-heading font-bold text-primary">My DEPI Journey</h2>
             </div>
-            <div class="space-y-8 max-w-5xl mx-auto">
-                <!-- MegaSoft IT Training Internship -->
-                <div class="project-card animated-item">
-                    <div class="p-6">
-                        <h3 class="text-2xl font-heading font-semibold text-primary mb-3">
-                            <span class="text-4xl mr-2 text-blue-500 animate-pulse" style="animation-duration: 2s;">🏢</span> MegaSoft IT Training – 2-Month Internship
-                        </h3>
-                        <p class="text-primary/70 mb-4">As part of a two-month internship at MegaSoft, I joined a structured training program divided into two key tracks. The first month focused on IT Service Management using IBM technologies, while the second month introduced me to Business Intelligence tools &amp; reporting.</p>
-                        
-                        <h4 class="text-xl font-heading font-semibold text-primary mb-2 mt-4">
-                            <span class="text-2xl mr-2 text-blue-400">🟦</span> Month 1 – ITSM Track (IBM Maximo &amp; ITIL):
-                        </h4>
-                        <p class="text-primary/70 mb-4">During this phase, we worked with IBM Maximo under the Enterprise Asset Management (EAM) framework. I learned how service requests &amp; asset tracking operate within an enterprise system. My practical tasks included:</p>
-                        <ul class="list-disc list-inside text-primary/70 space-y-1 mb-4 pl-2 text-sm">
-                            <li>Creating &amp; customizing Start Centers in Maximo</li>
-                            <li>Designing basic Workflows to simulate real-life service processes</li>
-                            <li>Gaining a functional understanding of EAM &amp; how it connects to ITIL practices</li>
-                            <li>Working in teams to present use cases &amp; apply knowledge through practical assignments</li>
-                        </ul>
+            <div class="skill-card p-6 md:p-10 max-w-4xl mx-auto"> <!-- Added skill-card styling here -->
+                 <p class="mt-5 text-lg text-primary/70 max-w-4xl mx-auto">
+                    My intensive 9-month program experience focused on developing comprehensive expertise in Supply Chain Management &amp; Enterprise Resource Planning through Oracle ERP systems. This rigorous curriculum equipped me with the analytical capabilities to assess complex organizational challenges &amp; design targeted digital solutions within integrated ERP environments. The program emphasized strategic application of Oracle ERP functionalities to optimize operational performance &amp; achieve measurable business outcomes. Through a blended learning approach that combined theoretical foundations with practical application, I developed the skills necessary to lead &amp; execute transformative digital initiatives that deliver tangible organizational value.
+                 </p>
+            </div>
+        </section>
 
-                        <h4 class="text-xl font-heading font-semibold text-primary mb-2 mt-4">
-                            <span class="text-2xl mr-2 text-blue-400">🟦</span> Month 2 – BI Track (DB2, SQL &amp; Cognos):
-                        </h4>
-                        <p class="text-primary/70 mb-4">In the second month, the focus shifted to data analysis &amp; reporting. I worked with:</p>
-                        <ul class="list-disc list-inside text-primary/70 space-y-1 mb-4 pl-2 text-sm">
-                            <li>IBM DB2 to understand relational databases &amp; perform SQL queries</li>
-                            <li>IBM Cognos Analytics to design reports &amp; extract insights from ticketing data</li>
-                            <li>Building simple reports &amp; queries related to service request performance &amp; issue trends</li>
-                        </ul>
-                        <p class="text-primary/70">This internship gave me valuable hands-on experience with enterprise-level IBM tools. It allowed me to understand both the operational &amp; analytical sides of IT systems, &amp; enhanced my technical skills in service workflows, database queries, &amp; reporting dashboards.</p>
-                    </div>
-                    <!-- Image Carousel for MegaSoft -->
-                    <div class="carousel-container" data-autoplay-interval="5000">
-                        <div class="carousel-track">
-                            <img src="https://placehold.co/600x350/F8E8EE/4A2731?text=MegaSoft+Img+1" alt="MegaSoft Internship Image 1" class="carousel-img">
-                            <img src="https://placehold.co/600x350/E6A4B4/4A2731?text=MegaSoft+Img+2" alt="MegaSoft Internship Image 2" class="carousel-img">
-                            <img src="https://placehold.co/600x350/C88EA7/FFF5F7?text=MegaSoft+Img+3" alt="MegaSoft Internship Image 3" class="carousel-img">
-                        </div>
-                        <button class="carousel-btn prev-btn">
-                            <i class="fas fa-chevron-left text-primary"></i>
-                        </button>
-                        <button class="carousel-btn next-btn">
-                            <i class="fas fa-chevron-right text-primary"></i>
-                        </button>
-                        <div class="carousel-dots"></div>
-                    </div>
+        <section id="skills" class="mb-20 md:mb-28 scroll-mt-24">
+            <div class="text-center animated-item mb-16">
+                <h2 class="text-4xl md:text-5xl font-heading font-bold text-primary">Oracle ERP Mastery</h2>
+                <p class="mt-5 text-lg text-primary/70 max-w-3xl mx-auto">A deep-dive into the modules I configured &amp; managed, translating business requirements into powerful, system-driven solutions.</p>
+            </div>
+            <div class="space-y-4 max-w-5xl mx-auto">
+                <div class="animated-item">
+                    <button class="expand-button flex justify-between items-center text-left">
+                        <div>
+                            <h3 class="text-xl md:text-2xl font-bold text-primary">Inventory Module</h3>
+                            <p class="text-primary/70 mt-1">Full cycle management from organizational setup to ATP rules.</p>
+                        </div><span class="chevron text-3xl text-gradient">▼</span>
+                    </button>
+                    <div class="expandable-content"><div class="p-4"><p class="font-semibold text-primary/80 mb-2">The skills gained: Comprehensive skills in defining, configuring, &amp; managing inventory within Oracle ERP to ensure accurate stock levels &amp; efficient asset control.</p><ul class="list-disc list-inside text-primary/70 space-y-2 mt-4 text-sm pl-2">
+                        <li><strong>Organizational Structure Definition:</strong> Ability to define &amp; configure complex organizational hierarchies within Oracle ERP, including Operating Units, Master Organizations, &amp; Inventory Organizations, to mirror diverse business structures.</li>
+                        <li><strong>Inventory Parameter Configuration:</strong> Expertise in adjusting critical inventory parameters, costing information, revision, lot, serial, &amp; LPN controls, as well as Available-to-Promise (ATP) &amp; picking rules, to align with specific business requirements.</li>
+                        <li><strong>Subinventory &amp; Locator Design:</strong> Proficiency in designing &amp; implementing subinventories &amp; locators for precise inventory segmentation &amp; tracking within warehouses.</li>
+                        <li><strong>Units of Measure (UOM) Management:</strong> Skill in defining various Units of Measure &amp; establishing accurate conversion rules to support diverse product handling &amp; reporting needs.</li>
+                        <li><strong>Item Master Definition &amp; Customization:</strong> Comprehensive understanding of defining items &amp; customizing their attribute groups (Inventory, Order Management, Purchasing, Receiving, Costing, Work In Process, General Planning, Invoicing) to capture essential business data.</li>
+                        <li><strong>Item Attribute Control &amp; Categorization:</strong> Capability to control item attributes at various levels &amp; define/assign item categories for effective classification &amp; reporting.</li>
+                        <li><strong>Transaction Management:</strong> Hands-on experience with core inventory transaction actions, including issuing from stores, subinventory transfers, direct organization transfers, &amp; receiving into stores.</li>
+                        <li><strong>Account Alias &amp; Shorthand Alias Setup:</strong> Expertise in defining account aliases &amp; shorthand aliases to streamline financial transactions &amp; data entry based on business needs.</li>
+                        <li><strong>Lot &amp; Serial Control Implementation:</strong> Proficiency in setting up &amp; adjusting lot control &amp; serial number control for specific items, ensuring granular traceability &amp; compliance.</li>
+                        <li><strong>Subinventory Assignment &amp; Picking Rules:</strong> Ability to assign subinventories to items &amp; set up optimized picking rules to enhance warehouse efficiency.</li>
+                        <li><strong>Move Order Management:</strong> Skill in setting up &amp; managing move orders for internal material transfers within &amp; between organizations.</li>
+                        <li><strong>Inter-Organization Transfer &amp; Shipping Network:</strong> Understanding of inter-organization transfers &amp; defining robust shipping networks for seamless material movement across different business units.</li>
+                        <li><strong>Cycle Count &amp; Physical Inventory Execution:</strong> Competence in performing cycle counts &amp; physical inventories to reconcile system records with actual stock, ensuring data accuracy.</li>
+                        <li><strong>ATP Rules Configuration:</strong> Ability to configure Available-to-Promise (ATP) rules to provide accurate commitment dates to customers based on available inventory &amp; supply.</li>
+                        <li><strong>Inventory Planning &amp; Replenishment:</strong> Expertise in implementing inventory planning &amp; replenishment strategies, including Min-Max planning &amp; Safety Stock calculations, to optimize stock levels &amp; prevent disruptions.</li>
+                    </ul></div></div>
                 </div>
-
-                <!-- Oracle Database Administration – Global Academy -->
-                <div class="project-card animated-item">
-                    <div class="p-6">
-                        <h3 class="text-2xl font-heading font-semibold text-primary mb-3">
-                            <span class="text-4xl mr-2 text-green-500 animate-pulse" style="animation-duration: 2s; animation-delay: 0.5s;">📚</span> Oracle Database Administration – Global Academy
-                        </h3>
-                        <p class="text-primary/70 mb-4">I began my journey with Oracle Database Administration through a practical course at Global Academy, where I learned the core responsibilities of a DBA using Oracle 19c. The course started with hands-on training in SQL using Oracle SQL Developer, where I practiced essential commands needed for any database administrator.</p>
-                        
-                        <h4 class="text-xl font-heading font-semibold text-primary mb-2 mt-4">Course Highlights:</h4>
-                        <p class="text-primary/70 mb-4">We then moved to the administration part on Linux, where I learned:</p>
-                        <ul class="list-disc list-inside text-primary/70 space-y-1 mb-4 pl-2 text-sm">
-                            <li>How to manage users &amp; roles</li>
-                            <li>How to start &amp; shut down a database instance</li>
-                            <li>The architecture of Oracle Database, &amp; how components interact internally</li>
-                            <li>How to control user privileges &amp; system access</li>
-                        </ul>
-                        <p class="text-primary/70">Later, we focused on backup &amp; recovery using RMAN (Recovery Manager), &amp; I practiced different types of backups, including full &amp; incremental backups.</p>
-                    </div>
-                    <!-- Image Carousel for Global Academy -->
-                    <div class="carousel-container" data-autoplay-interval="5000">
-                        <div class="carousel-track">
-                            <img src="https://placehold.co/600x350/F8E8EE/4A2731?text=Global+Academy+Img+1" alt="Global Academy DBA Image 1" class="carousel-img">
-                            <img src="https://placehold.co/600x350/E6A4B4/4A2731?text=Global+Academy+Img+2" alt="Global Academy DBA Image 2" class="carousel-img">
-                        </div>
-                        <button class="carousel-btn prev-btn">
-                            <i class="fas fa-chevron-left text-primary"></i>
-                        </button>
-                        <button class="carousel-btn next-btn">
-                            <i class="fas fa-chevron-right text-primary"></i>
-                        </button>
-                        <div class="carousel-dots"></div>
-                    </div>
+                <div class="animated-item">
+                    <button class="expand-button flex justify-between items-center text-left">
+                        <div>
+                            <h3 class="text-xl md:text-2xl font-bold text-primary">Purchasing Module</h3>
+                            <p class="text-primary/70 mt-1">End-to-end Procure-to-Pay lifecycle management.</p>
+                        </div><span class="chevron text-3xl text-gradient">▼</span>
+                    </button>
+                    <div class="expandable-content"><div class="p-4"><p class="font-semibold text-primary/80 mb-2">Skills gained: Expertise in managing the entire procure-to-pay lifecycle within Oracle ERP, from requisitioning to supplier management &amp; automated purchasing workflows.</p><ul class="list-disc list-inside text-primary/70 space-y-2 mt-4 text-sm pl-2">
+                        <li><strong>Procure-to-Pay Lifecycle Mastery:</strong> In-depth understanding of the entire procure-to-pay lifecycle, from requisitioning to payment.</li>
+                        <li><strong>Financial &amp; Purchasing Options Configuration:</strong> Proficiency in defining financial &amp; purchasing options to align the system with specific business needs &amp; policies.</li>
+                        <li><strong>Receiving Options Definition:</strong> Expertise in configuring receiving options to control how goods are received &amp; put away within the system.</li>
+                        <li><strong>Document Type Management:</strong> Ability to define &amp; manage various document types (e.g., Purchase Requisitions, Purchase Orders) to standardize purchasing processes.</li>
+                        <li><strong>Buyer &amp; Supplier Definition:</strong> Skill in defining buyers &amp; managing comprehensive supplier information within the system.</li>
+                        <li><strong>Purchase Requisition Creation &amp; Modification:</strong> Hands-on experience in creating purchase requisitions &amp; modifying their lines as per business requirements.</li>
+                        <li><strong>Automated Purchase Order Creation:</strong> Proficiency in auto-creating purchase orders from requisitions, enhancing efficiency &amp; reducing manual effort.</li>
+                        <li><strong>Approved Supplier Status Management:</strong> Ability to define &amp; manage approved supplier statuses to ensure compliance &amp; quality in sourcing.</li>
+                        <li><strong>Internal Requisition Processing:</strong> Understanding &amp; practical application of internal requisitions for inter-organizational material requests.</li>
+                        <li><strong>Blanket Purchase Agreement (BPA) Utilization:</strong> Expertise in creating &amp; managing Blanket Purchase Agreements for long-term supplier relationships &amp; simplified recurring purchases.</li>
+                        <li><strong>Automated PO from Quotation:</strong> Skill in automating the purchase order process based on quotations, streamlining the sourcing &amp; ordering workflow.</li>
+                        <li><strong>Sourcing Rule for BPA:</strong> Ability to define sourcing rules for Blanket Purchase Agreements to optimize supplier selection.</li>
+                    </ul></div></div>
                 </div>
-
-                <!-- Raly IT Internship -->
-                <div class="project-card animated-item">
-                    <div class="p-6">
-                        <h3 class="text-2xl font-heading font-semibold text-primary mb-3">
-                            <span class="text-4xl mr-2 text-purple-500 animate-pulse" style="animation-duration: 2s; animation-delay: 1s;">💻</span> Raly IT Internship
-                        </h3>
-                        <p class="text-primary/70 mb-4">Following my Oracle DBA course, I joined a two-month internship at Raly IT, where I applied my DBA knowledge in a more practical, task-based environment. During this internship, I worked on:</p>
-                        <ul class="list-disc list-inside text-primary/70 space-y-1 mb-4 pl-2 text-sm">
-                            <li>Installing Oracle Linux 7 &amp; preparing the environment</li>
-                            <li>Installing &amp; creating Oracle Database instances</li>
-                            <li>Performing patch management tasks using OPatch</li>
-                            <li>Practicing day-to-day DBA tasks such as monitoring, user creation, &amp; system configuration</li>
-                        </ul>
-                        <p class="text-primary/70">This internship provided crucial hands-on experience, solidifying my foundational knowledge in Oracle DBA with real-world operational tasks.</p>
-                    </div>
-                    <!-- Image Carousel for Raly IT -->
-                    <div class="carousel-container" data-autoplay-interval="5000">
-                        <div class="carousel-track">
-                            <img src="https://placehold.co/600x350/F8E8EE/4A2731?text=Raly+IT+Img+1" alt="Raly IT Internship Image 1" class="carousel-img">
-                            <img src="https://placehold.co/600x350/E6A4B4/4A2731?text=Raly+IT+Img+2" alt="Raly IT Internship Image 2" class="carousel-img">
-                            <img src="https://placehold.co/600x350/C88EA7/FFF5F7?text=Raly+IT+Img+3" alt="Raly IT Internship Image 3" class="carousel-img">
-                        </div>
-                        <button class="carousel-btn prev-btn">
-                            <i class="fas fa-chevron-left text-primary"></i>
-                        </button>
-                        <button class="carousel-btn next-btn">
-                            <i class="fas fa-chevron-right text-primary"></i>
-                        </button>
-                        <div class="carousel-dots"></div>
-                    </div>
+                <div class="animated-item">
+                    <button class="expand-button flex justify-between items-center text-left">
+                        <div>
+                           <h3 class="text-xl md:text-2xl font-bold text-primary">Order Management Module</h3>
+                           <p class="text-primary/70 mt-1">Optimizing the complete Order-to-Cash process.</p>
+                        </div><span class="chevron text-3xl text-gradient">▼</span>
+                    </button>
+                    <div class="expandable-content"><div class="p-4"><p class="font-semibold text-primary/80 mb-2">Skills gained: Proficiency in configuring &amp; managing Oracle ERP's order management functionalities to optimize the entire order-to-cash process.</p><ul class="list-disc list-inside text-primary/70 space-y-2 mt-4 text-sm pl-2">
+                        <li><strong>Order-to-Cash Lifecycle Mastery:</strong> Comprehensive understanding of the entire order-to-cash process, from customer order to revenue recognition.</li>
+                        <li><strong>System Parameters Configuration:</strong> Expertise in setting up system parameters for order management to control order processing behavior.</li>
+                        <li><strong>Integration with Account Receivables:</strong> Understanding of the seamless integration between order management &amp; account receivables for accurate invoicing &amp; payment tracking.</li>
+                        <li><strong>Differentiated Sales Order Lines:</strong> Ability to differentiate sales orders by creating various sales line types, allowing for flexible order processing.</li>
+                        <li><strong>Sales Order Setup &amp; Creation:</strong> Hands-on experience in setting up &amp; creating sales orders, including complex configurations.</li>
+                        <li><strong>Sales Order Integration &amp; Completion:</strong> Proficiency in integrating &amp; completing sales orders through both Order Management &amp; Inventory applications, ensuring end-to-end fulfillment.</li>
+                    </ul></div></div>
+                </div>
+                 <div class="animated-item">
+                    <button class="expand-button flex justify-between items-center text-left">
+                        <div>
+                           <h3 class="text-xl md:text-2xl font-bold text-primary">System Administration</h3>
+                           <p class="text-primary/70 mt-1">Proficient in HR, Pricing, &amp; core system configurations.</p>
+                        </div><span class="chevron text-3xl text-gradient">▼</span>
+                    </button>
+                    <div class="expandable-content"><div class="p-4"><p class="font-semibold text-primary/80 mb-2">Skills gained: Valuable exposure &amp; practical experience in configuring &amp; managing key aspects of other Oracle ERP modules, broadening my system administration capabilities.</p><ul class="list-disc list-inside text-primary/70 space-y-2 mt-4 text-sm pl-2">
+                        <li><strong>HR Module:</strong> Defining Locations, Jobs, &amp; creating Employee records; understanding Position Hierarchy for organizational structure.</li>
+                        <li><strong>Pricing Module:</strong> Creating customized Price Lists to manage complex pricing rules &amp; discounts for various products &amp; customer segments.</li>
+                        <li><strong>System Administration:</strong> Designing flexible fields (flex fields) &amp; utilizing default ones to extend data capture; defining responsibilities &amp; understanding access eligibility based on business needs; enabling &amp; disabling specific profile options to control system behavior.</li>
+                    </ul></div></div>
                 </div>
             </div>
         </section>
 
-        <section id="skills-gained" class="mb-20 md:mb-28 scroll-mt-24">
+        <section id="scm-concepts" class="mb-20 md:mb-28 scroll-mt-24">
             <div class="text-center animated-item mb-16">
-                <h2 class="text-4xl md:text-5xl font-heading font-bold text-primary">Key Skills Gained from Internships</h2>
-                <p class="mt-5 text-lg text-primary/70 max-w-3xl mx-auto">A summary of the technical &amp; operational skills honed during my internship experiences.</p>
+                <h2 class="text-4xl md:text-5xl font-heading font-bold text-primary">Applied Supply Chain Strategy</h2>
+                <p class="mt-5 text-lg text-primary/70 max-w-3xl mx-auto">Demonstrating the translation of core SCM principles into tangible business solutions using Oracle ERP to enhance performance, cut costs, &amp; drive efficiency.</p>
             </div>
-            <div class="skill-card p-6 md:p-10 max-w-5xl mx-auto mb-8">
-                <ul class="list-disc list-inside text-primary/70 space-y-2 pl-2">
-                    <li><strong>IT Service Management (ITSM):</strong> Functional understanding of IBM Maximo, EAM, &amp; ITIL practices; experience in service request workflows &amp; asset tracking.</li>
-                    <li><strong>Business Intelligence (BI):</strong> Proficiency with IBM DB2 for relational databases &amp; SQL querying; experience in designing reports &amp; extracting insights using IBM Cognos Analytics.</li>
-                    <li><strong>Oracle Database Administration (DBA):</strong> Core responsibilities of a DBA with Oracle 19c; hands-on SQL practice with Oracle SQL Developer.</li>
-                    <li><strong>Linux System Administration:</strong> Managing users &amp; roles, starting/shutting down database instances, controlling user privileges, installing Oracle Linux.</li>
-                    <li><strong>Database Architecture &amp; Management:</strong> Understanding of Oracle Database internal components; practical experience in monitoring, user creation, &amp; system configuration.</li>
-                    <li><strong>Backup &amp; Recovery:</strong> Proficient in using RMAN for various backup types (full, incremental).</li>
-                    <li><strong>Patch Management:</strong> Experience with OPatch for applying database patches.</li>
-                    <li><strong>Team Collaboration &amp; Presentation:</strong> Experience working in teams, presenting use cases, &amp; applying theoretical knowledge to practical assignments.</li>
-                </ul>
+            <div class="grid md:grid-cols-1 lg:grid-cols-2 gap-8">
+                <div class="project-card animated-item">
+                    <div class="p-6">
+                        <h3 class="text-2xl font-semibold text-primary mb-3">Automated Inventory Control</h3>
+                        <p class="text-primary/70 mb-4">Implemented Min-Max planning within Oracle ERP to automate replenishment, reduce carrying costs, &amp; prevent costly stockouts.</p>
+                    </div>
+                    <img src="https://placehold.co/600x350/F8E8EE/4A2731?text=Min-Max+Inventory" alt="Min-Max Planning Chart" class="rounded-b-2xl w-full"/>
+                </div>
+                <div class="project-card animated-item">
+                    <div class="p-6">
+                        <h3 class="text-2xl font-semibold text-primary mb-3">Streamlined Procurement Processes</h3>
+                        <p class="text-primary/70 mb-4">Designed &amp; implemented automated Procure-to-Pay workflows, significantly reducing manual intervention &amp; order processing time.</p>
+                    </div>
+                    <img src="https://placehold.co/600x350/F8E8EE/4A2731?text=Automated+Workflow" alt="Purchasing Workflow Diagram" class="rounded-b-2xl w-full"/>
+                </div>
+                <div class="project-card animated-item">
+                    <div class="p-6">
+                        <h3 class="text-2xl font-semibold text-primary mb-3">Data-Driven Performance Analytics</h3>
+                        <p class="text-primary/70 mb-4">Utilized analytics to evaluate supply chain performance, identify bottlenecks, &amp; inform strategic optimization for continuous improvement.</p>
+                    </div>
+                    <img src="https://placehold.co/600x350/F8E8EE/4A2731?text=Performance+Analytics" alt="Supply Chain Analytics Dashboard" class="rounded-b-2xl w-full"/>
+                </div>
+                <div class="project-card animated-item">
+                    <div class="p-6">
+                        <h3 class="text-2xl font-semibold text-primary mb-3">Integrated Order-to-Cash Cycle</h3>
+                        <p class="text-primary/70 mb-4">Engineered a seamless order fulfillment process by integrating sales &amp; inventory modules for complete, end-to-end visibility.</p>
+                    </div>
+                    <img src="https://placehold.co/600x350/F8E8EE/4A2731?text=Order-to-Cash+Flow" alt="Order Fulfillment Process" class="rounded-b-2xl w-full"/>
+                </div>
+            </div>
+        </section>
+
+        <section id="projects" class="mb-20 md:mb-28 scroll-mt-24 animated-item">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-heading font-bold text-primary">Capstone Project: Golden Cart</h2>
+                <p class="mt-5 text-lg text-primary/70 max-w-3xl mx-auto">The culmination of my DEPI training—a comprehensive Oracle ERP solution designed to revolutionize a hypermarket chain's operations.</p>
+            </div>
+            <div class="skill-card p-6 md:p-10">
+                <div class="text-center">
+                    <h3 class="text-3xl font-bold text-primary mb-4 text-gradient">Oracle ERP for Hypermarket Transformation</h3>
+                </div>
+
+                <div class="space-y-4 mt-8">
+                    <!-- Project Vision, Mission & Core Departments -->
+                    <div class="animated-item">
+                        <button class="expand-button flex justify-between items-center text-left">
+                            <div>
+                                <h3 class="text-xl md:text-2xl font-bold text-primary">Project Vision, Mission &amp; Core Departments</h3>
+                                <p class="text-primary/70 mt-1">Understanding the strategic goals &amp; organizational scope.</p>
+                            </div><span class="chevron text-3xl text-gradient">▼</span>
+                        </button>
+                        <div class="expandable-content"><div class="p-4">
+                            <p class="font-semibold text-primary/80 mb-2"><strong>Vision:</strong> Digitally transforming the retail experience using data-driven operations.</p>
+                            <p class="font-semibold text-primary/80 mb-4"><strong>Mission:</strong> Delivering convenience, quality, &amp; affordability to Egyptian consumers.</p>
+                            <p class="text-primary/70 mb-2">The project focused on a hypermarket with its main branch in Cairo, supported by dedicated warehouses in each city for efficient logistics. The core departments targeted for transformation included Inventory, Order Management, Procurement, &amp; HR.</p>
+                        </div></div>
+                    </div>
+
+                    <!-- Problem Statement -->
+                    <div class="animated-item">
+                        <button class="expand-button flex justify-between items-center text-left">
+                            <div>
+                                <h3 class="text-xl md:text-2xl font-bold text-primary">Problem Statement: Addressing Traditional Retail Pain Points</h3>
+                                <p class="text-primary/70 mt-1">Identifying critical challenges in traditional retail operations.</p>
+                            </div><span class="chevron text-3xl text-gradient">▼</span>
+                        </button>
+                        <div class="expandable-content"><div class="p-4">
+                            <ul class="list-disc list-inside text-primary/70 space-y-2 pl-2">
+                                <li><strong>Inventory Nightmares:</strong> Inaccurate stock levels, poor visibility, &amp; inefficient warehouse processes leading to losses &amp; missed sales opportunities.</li>
+                                <li><strong>Procurement Pain:</strong> Complex &amp; manual supplier management, inconsistent pricing, &amp; lack of streamlined purchasing workflows.</li>
+                                <li><strong>Sales Blind Spots:</strong> Issues with order fulfillment, limited insight into customer behavior, &amp; a fragmented view of sales data.</li>
+                                <li><strong>High Cost of Inaction:</strong> The significant financial &amp; operational consequences of failing to embrace digital transformation in a competitive market.</li>
+                                <li><strong>Lack of Digital Core:</strong> The absence of an integrated digital backbone to support scalable growth &amp; data-driven decision-making.</li>
+                            </ul>
+                        </div></div>
+                    </div>
+
+                    <!-- Our Approach: Oracle EBS as the Digital Core -->
+                    <div class="animated-item">
+                        <button class="expand-button flex justify-between items-center text-left">
+                            <div>
+                                <h3 class="text-xl md:text-2xl font-bold text-primary">Our Approach: Oracle EBS as the Digital Core</h3>
+                                <p class="text-primary/70 mt-1">Leveraging Oracle E-Business Suite for scalability &amp; efficiency.</p>
+                            </div><span class="chevron text-3xl text-gradient">▼</span>
+                        </button>
+                        <div class="expandable-content"><div class="p-4">
+                            <p class="text-primary/70">Our strategic approach centered on implementing Oracle E-Business Suite (EBS) as the robust digital core to fulfill key objectives: <strong>Scalability, Integration, Reliability, Efficiency, &amp; Growth.</strong> This comprehensive ERP solution was chosen to provide a unified platform for managing all critical hypermarket operations.</p>
+                        </div></div>
+                    </div>
+
+                    <!-- Applied Oracle ERP & SCM Features in Golden Cart -->
+                    <div class="animated-item">
+                        <button class="expand-button flex justify-between items-center text-left">
+                            <div>
+                                <h3 class="text-xl md:text-2xl font-bold text-primary">Applied Oracle ERP &amp; SCM Features in Golden Cart</h3>
+                                <p class="text-primary/70 mt-1">Detailed configurations for Inventory, Procurement &amp; Order Management.</p>
+                            </div><span class="chevron text-3xl text-gradient">▼</span>
+                        </button>
+                        <div class="expandable-content"><div class="p-4">
+                            <h4 class="text-xl font-semibold text-primary mb-3">Foundational Setup &amp; Inventory Management:</h4>
+                            <p class="text-primary/70 mb-4">Core configurations &amp; inventory controls implemented to establish a robust &amp; accurate system for the hypermarket.</p>
+                            <ul class="list-disc list-inside text-primary/70 space-y-2 pl-2">
+                                <li><strong>Multi-Organizational Structure:</strong> Defined Legal Entities, Operating Units ('GC Operating Unit'), Inventory Organizations ('Cairo - Alex'), Subinventories ('ELC', 'Clothes', etc.), &amp; Locators to reflect the hypermarket's physical &amp; operational structure.</li>
+                                <li><strong>Working Calendars:</strong> Established specific working calendars with exception lists for accurate planning &amp; transaction processing.</li>
+                                <li><strong>Centralized Item Master:</strong> Implemented a single definition for all items, utilizing templates (e.g., for electronics, apparel) for faster setup &amp; consistency.</li>
+                                <li><strong>Granular Tracking:</strong> Configured Lot Control &amp; Serial Number Control for precise item identification &amp; traceability.</li>
+                                <li><strong>Real-time Quantity Tracking:</strong> Ensured the system accurately tracks on-hand balances across all locations.</li>
+                                <li><strong>Units of Measure (UOM):</strong> Handled different units (Each, Case, KG) with accurate conversion rules.</li>
+                                <li><strong>Customized Transaction Types:</strong> Defined specific business transaction types to align with hypermarket operations.</li>
+                                <li><strong>Min-Max Planning:</strong> Implemented internal requisition &amp; replenishment strategies based on Min-Max planning for inventory optimization.</li>
+                                <li><strong>Physical Inventories:</strong> Established processes to match system quantities with real on-hand quantities, ensuring inventory accuracy.</li>
+                            </ul>
+
+                            <h4 class="text-xl font-semibold text-primary mb-3 mt-6">Procurement &amp; Order Management:</h4>
+                            <p class="text-primary/70 mb-4">Streamlined purchasing &amp; sales processes through strategic Oracle ERP configurations, enhancing efficiency &amp; customer satisfaction.</p>
+                            <ul class="list-disc list-inside text-primary/70 space-y-2 pl-2">
+                                <li><strong>Supplier Definition:</strong> Created a central repository for comprehensive supplier information.</li>
+                                <li><strong>Purchase Orders (PO) &amp; Requisitions:</strong> Configured formal Purchase Orders &amp; system-controlled Purchase Requisitions, linked to approvals &amp; business rules.</li>
+                                <li><strong>Approval Hierarchy:</strong> Designed &amp; linked Job/Position hierarchies to Purchasing Approval Groups &amp; Assignments, enforcing spending limits &amp; accountability.</li>
+                                <li><strong>Configurable Approval Workflows:</strong> Implemented automated workflows for purchasing, ensuring compliance &amp; efficiency.</li>
+                                <li><strong>Controlled Receiving, Purchasing, &amp; Financial Options:</strong> Adjusted system options to suit the specific business needs of the hypermarket.</li>
+                                <li><strong>Sales Order Types &amp; Line Types:</strong> Configured Sales Order Types with specific line types (Sales, Return) to capture all sales order details efficiently.</li>
+                                <li><strong>Price List Management:</strong> Managed complex pricing rules &amp; discounts through customized Price Lists.</li>
+                                <li><strong>Picking Rules Integration:</strong> Connected picking rules with the Inventory module to streamline pick, pack, &amp; ship processes from order booking to fulfillment.</li>
+                                <li><strong>Customer Visibility:</strong> Provided a unified view of customer orders by linking customer accounts to sales order types.</li>
+                            </ul>
+                        </div></div>
+                    </div>
+
+                    <!-- Innovative Solutions & Business Impact -->
+                    <div class="animated-item">
+                        <button class="expand-button flex justify-between items-center text-left">
+                            <div>
+                                <h3 class="text-xl md:text-2xl font-bold text-primary">Innovative Solutions &amp; Business Impact</h3>
+                                <p class="text-primary/70 mt-1">Maximizing profitability &amp; operational efficiency.</p>
+                            </div><span class="chevron text-3xl text-gradient">▼</span>
+                        </button>
+                        <div class="expandable-content"><div class="p-4">
+                            <h4 class="text-xl font-semibold text-primary mb-3">Automated Demand-Supply Workflow:</h4>
+                            <p class="text-primary/70 mb-4">Developed an automated workflow to adjust supply based on market demand &amp; consumption rates, utilizing Min-Max planning. This innovative solution <strong>eliminated 90% of human interaction</strong> in the process, significantly boosting efficiency &amp; responsiveness.</p>
+                            <h4 class="text-xl font-semibold text-primary mb-3">Profitability Maximization through Costing:</h4>
+                            <p class="text-primary/70">Strategically linked business concepts to maximize profitability by:Utilizing Average Costing for inventory valuation, which is ideal for hypermarkets with fluctuating purchase prices &amp; frequent stock replenishment. This approach smooths price variations over time, avoiding swings in inventory valuation.
+                            Configuring items with Costing Enabled to ensure all relevant stock contributes accurately to inventory value &amp; Cost of Goods Sold (COGS).</p>
+                        </div></div>
+                    </div>
+                </div>
+                <!-- End of new content -->
+
+                <div class="grid md:grid-cols-2 gap-8 mt-10">
+                    <div class="bg-pink-50/50 p-6 rounded-xl border border-pink-100 hover:shadow-lg transition animated-item"><h4 class="text-xl font-semibold text-primary mb-3">Key Implementations</h4><ul class="list-disc list-inside text-primary/80 space-y-2 text-sm"><li>Defined a multi-organizational structure for precise logistics.</li><li>Implemented Min-Max planning for automated inventory replenishment.</li><li>Designed a configurable approval hierarchy for purchasing control.</li></ul></div>
+                    <div class="bg-pink-50/50 p-6 rounded-xl border border-pink-100 hover:shadow-lg transition animated-item"><h4 class="text-xl font-semibold text-primary mb-3">Innovative Solutions</h4><ul class="list-disc list-inside text-primary/80 space-y-2 text-sm"><li>Created an automated demand-supply workflow, cutting human interaction by 90%.</li><li>Utilized Average Costing to maximize profitability.</li><li>Provided a unified view of customer orders for enhanced service.</li></ul></div>
+                </div>
+                <div class="mt-12 pt-8 border-t border-pink-100 animated-item"><h3 class="text-4xl font-heading font-bold text-primary text-center mb-8 glowing-text text-gradient">Dive Into The Project Artifacts</h3><div class="grid grid-cols-2 lg:grid-cols-4 gap-4 text-center">
+                    <a href="https://drive.google.com/drive/folders/11hEF4UWqnOQ1785aOwl0ckn_wuhm_klP?usp=sharing" target="_blank" class="btn-primary p-4 h-full flex items-center justify-center">📊 Presentation</a>
+                    <a href="https://drive.google.com/drive/folders/1taEcmjgTCytqFrj7odbhRpFwA_FB07QK?usp=sharing" target="_blank" class="btn-primary p-4 h-full flex items-center justify-center">📝 Setup</a>
+                    <a href="https://drive.google.com/drive/folders/10e5j8vYHNbjfpFdoiikp8FCPxNn8waAh?usp=blank" target="_blank" class="btn-primary p-4 h-full flex items-center justify-center">📖 User Guide</a>
+                    <a href="https://drive.google.com/drive/folders/1jRfgznjHH9zKFHtq9za5UbLFYhD3Xx5f?usp=sharing" target="_blank" class="btn-primary p-4 h-full flex items-center justify-center">📚 SCM Material</a>
+                </div></div>
             </div>
         </section>
 
         <section id="contact" class="scroll-mt-24 animated-item">
              <div class="text-center">
                 <h2 class="text-4xl md:text-5xl font-heading font-bold text-primary">Get In Touch</h2>
-                <p class="mt-5 text-lg text-primary/70 max-w-2xl mx-auto">I'm always open to discussing new projects, creative ideas, or opportunities. Feel free to reach out.</p>
+                <p class="mt-5 text-lg text-primary/70 max-w-2xl mx-auto">I'm always open to discussing new projects, creative ideas, or opportunities to be part of an ambitious vision. Feel free to reach out.</p>
                 <div class="mt-8">
                      <a href="mailto:mariam.kamal.sof@gmail.com" class="btn-primary text-lg">mariam.kamal.sof@gmail.com</a>
                      <p class="text-primary/60 mt-4">Phone: +20 109 902 4089</p>
@@ -513,7 +579,7 @@
 
     <footer class="bg-primary/5 border-t border-pink-100 mt-20">
         <div class="container mx-auto px-6 py-8 text-center text-primary/70">
-            <p>© 2024 My Internship Portfolio. Designed with creativity &amp; passion.</p>
+            <p>© 2024 Mariam Mohamed Kamal. Designed with creativity &amp; passion.</p>
         </div>
     </footer>
 
@@ -563,8 +629,7 @@
 
         const typewriterElement = document.getElementById('typewriter');
         const cursorElement = document.getElementById('typewriter-cursor');
-        // Updated typewriter text for internship portfolio
-        const textToType = "Gaining Real-World Experience in IT &amp; Data.";
+        const textToType = "Crafting Digital Solutions, Driving Business Transformation.";
         let i = 0;
         function typeWriter() {
             if (i < textToType.length) {
@@ -582,73 +647,12 @@
         }
         setTimeout(typeWriter, 500);
 
-        // Carousel Logic
-        document.querySelectorAll('.carousel-container').forEach(container => {
-            const carouselTrack = container.querySelector('.carousel-track');
-            const images = container.querySelectorAll('.carousel-img');
-            const prevBtn = container.querySelector('.prev-btn');
-            const nextBtn = container.querySelector('.next-btn');
-            const dotsContainer = container.querySelector('.carousel-dots');
-            const dots = [];
-
-            let currentIndex = 0;
-            let autoplayInterval;
-            const autoplayDelay = parseInt(container.dataset.autoplayInterval) || 5000; // Get delay from data attribute, default to 5000ms
-
-            // Create dots
-            images.forEach((_, index) => {
-                const dot = document.createElement('span');
-                dot.classList.add('dot');
-                dot.dataset.index = index;
-                dot.addEventListener('click', () => {
-                    showImage(index);
-                    resetAutoplay();
-                });
-                dotsContainer.appendChild(dot);
-                dots.push(dot);
+        document.querySelectorAll('.expand-button').forEach(button => {
+            button.addEventListener('click', () => {
+                const content = button.nextElementSibling;
+                button.classList.toggle('expanded');
+                content.classList.toggle('expanded');
             });
-
-            function showImage(index) {
-                if (index < 0) {
-                    currentIndex = images.length - 1;
-                } else if (index >= images.length) {
-                    currentIndex = 0;
-                } else {
-                    currentIndex = index;
-                }
-
-                const offset = -currentIndex * 100;
-                carouselTrack.style.transform = `translateX(${offset}%)`;
-
-                // Update active dot
-                dots.forEach((dot, i) => {
-                    dot.classList.toggle('active', i === currentIndex);
-                });
-            }
-
-            function startAutoplay() {
-                autoplayInterval = setInterval(() => {
-                    showImage(currentIndex + 1);
-                }, autoplayDelay);
-            }
-
-            function resetAutoplay() {
-                clearInterval(autoplayInterval);
-                startAutoplay();
-            }
-
-            prevBtn.addEventListener('click', () => {
-                showImage(currentIndex - 1);
-                resetAutoplay();
-            });
-            nextBtn.addEventListener('click', () => {
-                showImage(currentIndex + 1);
-                resetAutoplay();
-            });
-
-            // Initial display and start autoplay
-            showImage(0);
-            startAutoplay();
         });
     });
     </script>
