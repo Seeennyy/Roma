@@ -380,8 +380,8 @@
 
         <section id="introduction" class="text-center mb-24 md:mb-32 pt-10">
             <div class="max-w-4xl mx-auto skill-card p-6 md:p-10">
-                <!-- Updated main image path -->
-                <img src="images/roma.jpg" alt="Mariam Mohamed Kamal Profile Picture" class="w-64 h-64 rounded-full mx-auto mb-6 border-4 border-white shadow-lg transition-transform duration-500 hover:scale-110 animated-item">
+                <!-- Updated main image path and size -->
+                <img src="images/roma.jpg" alt="Mariam Mohamed Kamal Profile Picture" class="w-96 h-96 rounded-full mx-auto mb-6 border-4 border-white shadow-lg transition-transform duration-500 hover:scale-110 animated-item">
                 <h1 class="text-5xl md:text-7xl font-heading font-extrabold leading-tight mt-4 text-gradient glowing-text" id="hero-title">
                     <span id="typewriter"></span><span id="typewriter-cursor">|</span>
                 </h1>
@@ -766,7 +766,7 @@
         const typewriterElement = document.getElementById('typewriter');
         const cursorElement = document.getElementById('typewriter-cursor');
         // Updated typewriter text for college portfolio
-        const textToType = "Exploring Information Systems & Digital Archiving.";
+        const textToType = "Exploring Information Systems &amp; Digital Archiving.";
         let i = 0;
         function typeWriter() {
             if (i < textToType.length) {
