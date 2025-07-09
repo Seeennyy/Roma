@@ -264,6 +264,84 @@
             .shape-4 { width: 120px; height: 120px; bottom: 10%; right: -10%; }
             .shape-5 { width: 90px; height: 90px; top: 70%; left: -10%; }
         }
+
+        /* Carousel specific styles (adapted from internship.txt for reuse) */
+        .carousel-container {
+            position: relative;
+            width: 100%;
+            overflow: hidden;
+            border-radius: 1.5rem; /* Matches project card border-radius */
+            margin-top: 2rem; /* Spacing from previous content */
+            background-color: #f0f0f0; /* Placeholder background */
+            padding-bottom: 56.25%; /* 16:9 Aspect Ratio (height / width * 100) */
+        }
+
+        .carousel-track {
+            display: flex;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            transition: transform 0.5s ease-in-out;
+        }
+
+        .carousel-img {
+            width: 100%;
+            height: 100%;
+            flex-shrink: 0; /* Ensures images don't shrink */
+            display: block; /* Removes extra space below image */
+            object-fit: cover; /* Ensures image covers the area */
+        }
+
+        .carousel-btn {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: rgba(255, 255, 255, 0.6);
+            border-radius: 50%;
+            padding: 0.5rem;
+            cursor: pointer;
+            z-index: 10;
+            transition: background-color 0.3s ease;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .carousel-btn:hover {
+            background-color: rgba(255, 255, 255, 0.9);
+        }
+
+        .carousel-btn.prev-btn {
+            left: 1rem;
+        }
+
+        .carousel-btn.next-btn {
+            right: 1rem;
+        }
+
+        .carousel-dots {
+            position: absolute;
+            bottom: 1rem;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 0.5rem;
+            z-index: 10;
+        }
+
+        .dot {
+            width: 0.75rem;
+            height: 0.75rem;
+            background-color: rgba(255, 255, 255, 0.7);
+            border-radius: 50%;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+
+        .dot.active {
+            background-color: var(--accent-pink);
+            transform: scale(1.2);
+        }
         
     </style>
 </head>
@@ -291,7 +369,7 @@
 
         <section id="hero" class="text-center mb-24 md:mb-32 pt-10">
             <div class="max-w-4xl mx-auto skill-card p-6 md:p-10"> <!-- Added skill-card styling here -->
-                <img src="https://placehold.co/150x150/E6A4B4/4A2731?text=MMK" alt="Mariam Mohamed Kamal" class="w-40 h-40 rounded-full mx-auto mb-6 border-4 border-white shadow-lg transition-transform duration-500 hover:scale-110 animated-item">
+                <img src="images/depi-main.jpeg" alt="Mariam Mohamed Kamal" class="w-40 h-40 rounded-full mx-auto mb-6 border-4 border-white shadow-lg transition-transform duration-500 hover:scale-110 animated-item">
                 <h1 class="text-5xl md:text-7xl font-heading font-extrabold leading-tight mt-4 text-gradient glowing-text" id="hero-title">
                     <span id="typewriter"></span><span id="typewriter-cursor">|</span>
                 </h1>
@@ -312,6 +390,32 @@
                  </p>
             </div>
         </section>
+
+        <!-- New Image Slider Section -->
+        <section id="depi-slider" class="mb-20 md:mb-28 scroll-mt-24 animated-item">
+            <div class="text-center mb-10">
+                <h2 class="text-4xl md:text-5xl font-heading font-bold text-primary">DEPI Program Highlights</h2>
+                <p class="mt-5 text-lg text-primary/70 max-w-3xl mx-auto">Visualizing key moments and aspects of my Digital Egypt Pioneers Initiative journey.</p>
+            </div>
+            <div class="carousel-container" id="depiCarousel" data-autoplay-interval="3500">
+                <div class="carousel-track">
+                    <img src="images/gc.png" alt="Golden Cart Project Overview" class="carousel-img">
+                    <img src="images/main.jpg" alt="DEPI Main Image 1" class="carousel-img">
+                    <img src="images/main2.jpg" alt="DEPI Main Image 2" class="carousel-img">
+                    <img src="images/main3.jpg" alt="DEPI Main Image 3" class="carousel-img">
+                    <img src="images/main4.jpg" alt="DEPI Main Image 4" class="carousel-img">
+                    <img src="images/main5.jpg" alt="DEPI Main Image 5" class="carousel-img">
+                </div>
+                <button class="carousel-btn prev-btn">
+                    <i class="fas fa-chevron-left text-primary"></i>
+                </button>
+                <button class="carousel-btn next-btn">
+                    <i class="fas fa-chevron-right text-primary"></i>
+                </button>
+                <div class="carousel-dots"></div>
+            </div>
+        </section>
+        <!-- End New Image Slider Section -->
 
         <section id="skills" class="mb-20 md:mb-28 scroll-mt-24">
             <div class="text-center animated-item mb-16">
@@ -409,28 +513,28 @@
                         <h3 class="text-2xl font-semibold text-primary mb-3">Automated Inventory Control</h3>
                         <p class="text-primary/70 mb-4">Implemented Min-Max planning within Oracle ERP to automate replenishment, reduce carrying costs, &amp; prevent costly stockouts.</p>
                     </div>
-                    <img src="https://placehold.co/600x350/F8E8EE/4A2731?text=Min-Max+Inventory" alt="Min-Max Planning Chart" class="rounded-b-2xl w-full"/>
+                    <img src="images/min.jpeg" alt="Min-Max Planning Chart" class="rounded-b-2xl w-full"/>
                 </div>
                 <div class="project-card animated-item">
                     <div class="p-6">
                         <h3 class="text-2xl font-semibold text-primary mb-3">Streamlined Procurement Processes</h3>
                         <p class="text-primary/70 mb-4">Designed &amp; implemented automated Procure-to-Pay workflows, significantly reducing manual intervention &amp; order processing time.</p>
                     </div>
-                    <img src="https://placehold.co/600x350/F8E8EE/4A2731?text=Automated+Workflow" alt="Purchasing Workflow Diagram" class="rounded-b-2xl w-full"/>
+                    <img src="images/proc.png" alt="Purchasing Workflow Diagram" class="rounded-b-2xl w-full"/>
                 </div>
                 <div class="project-card animated-item">
                     <div class="p-6">
                         <h3 class="text-2xl font-semibold text-primary mb-3">Data-Driven Performance Analytics</h3>
                         <p class="text-primary/70 mb-4">Utilized analytics to evaluate supply chain performance, identify bottlenecks, &amp; inform strategic optimization for continuous improvement.</p>
                     </div>
-                    <img src="https://placehold.co/600x350/F8E8EE/4A2731?text=Performance+Analytics" alt="Supply Chain Analytics Dashboard" class="rounded-b-2xl w-full"/>
+                    <img src="images/data.png" alt="Supply Chain Analytics Dashboard" class="rounded-b-2xl w-full"/>
                 </div>
                 <div class="project-card animated-item">
                     <div class="p-6">
                         <h3 class="text-2xl font-semibold text-primary mb-3">Integrated Order-to-Cash Cycle</h3>
                         <p class="text-primary/70 mb-4">Engineered a seamless order fulfillment process by integrating sales &amp; inventory modules for complete, end-to-end visibility.</p>
                     </div>
-                    <img src="https://placehold.co/600x350/F8E8EE/4A2731?text=Order-to-Cash+Flow" alt="Order Fulfillment Process" class="rounded-b-2xl w-full"/>
+                    <img src="images/o2c.png" alt="Order Fulfillment Process" class="rounded-b-2xl w-full"/>
                 </div>
             </div>
         </section>
@@ -654,6 +758,117 @@
                 content.classList.toggle('expanded');
             });
         });
+
+        // Carousel Logic (re-used and adapted for multiple carousels)
+        const setupCarousel = (carouselId, autoplayDelay = 5000) => {
+            const container = document.getElementById(carouselId);
+            if (!container) return; // Exit if container not found
+
+            const carouselTrack = container.querySelector('.carousel-track');
+            // Ensure images are selected AFTER they are potentially populated
+            let images = Array.from(carouselTrack.querySelectorAll('.carousel-img'));
+            const prevBtn = container.querySelector('.prev-btn');
+            const nextBtn = container.querySelector('.next-btn');
+            const dotsContainer = container.querySelector('.carousel-dots');
+            let dots = [];
+
+            let currentIndex = 0;
+            let autoplayInterval;
+
+            // Clear existing dots and images if re-initializing
+            if (dotsContainer) dotsContainer.innerHTML = '';
+            if (carouselTrack) carouselTrack.innerHTML = '';
+
+            // Define images based on carousel ID for dynamic population
+            let imagePaths = [];
+            let altTexts = [];
+
+            if (carouselId === 'depiCarousel') {
+                imagePaths = [
+                    'images/gc.png', 'images/main.jpg', 'images/main2.jpg',
+                    'images/main3.jpg', 'images/main4.jpg', 'images/main5.jpg'
+                ];
+                altTexts = [
+                    'Golden Cart Project Overview', 'DEPI Main Image 1', 'DEPI Main Image 2',
+                    'DEPI Main Image 3', 'DEPI Main Image 4', 'DEPI Main Image 5'
+                ];
+            }
+            // Add more carousel IDs and their images here if needed for other sections
+
+            // Populate carousel with new images and create dots
+            imagePaths.forEach((path, index) => {
+                const img = document.createElement('img');
+                img.src = path;
+                img.alt = altTexts[index];
+                img.classList.add('carousel-img');
+                carouselTrack.appendChild(img);
+
+                const dot = document.createElement('span');
+                dot.classList.add('dot');
+                dot.dataset.index = index;
+                dot.addEventListener('click', () => {
+                    showImage(index);
+                    resetAutoplay();
+                });
+                dotsContainer.appendChild(dot);
+                dots.push(dot);
+            });
+
+            // Re-select images after populating
+            images = Array.from(carouselTrack.querySelectorAll('.carousel-img'));
+
+
+            function showImage(index) {
+                if (index < 0) {
+                    currentIndex = images.length - 1;
+                } else if (index >= images.length) {
+                    currentIndex = 0;
+                } else {
+                    currentIndex = index;
+                }
+
+                const offset = -currentIndex * 100;
+                carouselTrack.style.transform = `translateX(${offset}%)`;
+
+                // Update active dot
+                dots.forEach((dot, i) => {
+                    dot.classList.toggle('active', i === currentIndex);
+                });
+            }
+
+            function startAutoplay() {
+                autoplayInterval = setInterval(() => {
+                    showImage(currentIndex + 1);
+                }, autoplayDelay);
+            }
+
+            function resetAutoplay() {
+                clearInterval(autoplayInterval);
+                startAutoplay();
+            }
+
+            // Initial display and start autoplay
+            showImage(0);
+            startAutoplay();
+
+            // Event listeners for buttons
+            if (prevBtn) {
+                prevBtn.addEventListener('click', () => {
+                    showImage(currentIndex - 1);
+                    resetAutoplay();
+                });
+            }
+            if (nextBtn) {
+                nextBtn.addEventListener('click', () => {
+                    showImage(currentIndex + 1);
+                    resetAutoplay();
+                });
+            }
+        };
+
+        // Initialize the new DEPI carousel
+        setupCarousel('depiCarousel', 3500); // 3.5 seconds interval
+        
     });
     </script>
 </body>
