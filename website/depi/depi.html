@@ -269,11 +269,12 @@
         .carousel-container {
             position: relative;
             width: 100%;
+            max-width: 800px; /* Added max-width */
+            margin: 2rem auto; /* Centered and added margin */
             overflow: hidden;
             border-radius: 1.5rem; /* Matches project card border-radius */
-            margin-top: 2rem; /* Spacing from previous content */
             background-color: #f0f0f0; /* Placeholder background */
-            padding-bottom: 56.25%; /* 16:9 Aspect Ratio (height / width * 100) */
+            padding-bottom: 40%; /* Adjusted for smaller height */
         }
 
         .carousel-track {
@@ -367,7 +368,7 @@
     <main class="container mx-auto px-6 py-12 md:py-20">
 
         <section id="hero" class="text-center mb-24 md:mb-32 pt-10">
-            <div class="max-w-4xl mx-auto skill-card p-6 md:p-10"> <img src="images/depi-main.jpeg" alt="Mariam Mohamed Kamal" class="w-40 h-40 rounded-full mx-auto mb-6 border-4 border-white shadow-lg transition-transform duration-500 hover:scale-110 animated-item">
+            <div class="max-w-4xl mx-auto skill-card p-6 md:p-10"> <img src="images/roma.jpg" alt="Mariam Mohamed Kamal" class="w-40 h-40 rounded-full mx-auto mb-6 border-4 border-white shadow-lg transition-transform duration-500 hover:scale-110 animated-item" onerror="this.onerror=null;this.src='https://placehold.co/150x150/FF0000/FFFFFF?text=Image+Error';">
                 <h1 class="text-5xl md:text-7xl font-heading font-extrabold leading-tight mt-4 text-gradient glowing-text" id="hero-title">
                     <span id="typewriter"></span><span id="typewriter-cursor">|</span>
                 </h1>
@@ -501,32 +502,28 @@
                         <h3 class="text-2xl font-semibold text-primary mb-3">Automated Inventory Control</h3>
                         <p class="text-primary/70 mb-4">Implemented Min-Max planning within Oracle ERP to automate replenishment, reduce carrying costs, &amp; prevent costly stockouts.</p>
                     </div>
-                    <!-- Updated image styling -->
-                    <img src="images/min.jpeg" alt="Min-Max Planning Chart" class="rounded-b-2xl w-full h-64 object-cover"/>
+                    <img src="images/min.jpeg" alt="Min-Max Planning Chart" class="rounded-b-2xl w-full h-64 object-cover" onerror="this.onerror=null;this.src='https://placehold.co/600x350/FF0000/FFFFFF?text=Image+Error';"/>
                 </div>
                 <div class="project-card animated-item">
                     <div class="p-6">
                         <h3 class="text-2xl font-semibold text-primary mb-3">Streamlined Procurement Processes</h3>
                         <p class="text-primary/70 mb-4">Designed &amp; implemented automated Procure-to-Pay workflows, significantly reducing manual intervention &amp; order processing time.</p>
                     </div>
-                    <!-- Updated image styling -->
-                    <img src="images/proc.png" alt="Purchasing Workflow Diagram" class="rounded-b-2xl w-full h-64 object-cover"/>
+                    <img src="images/proc.png" alt="Purchasing Workflow Diagram" class="rounded-b-2xl w-full h-64 object-cover" onerror="this.onerror=null;this.src='https://placehold.co/600x350/FF0000/FFFFFF?text=Image+Error';"/>
                 </div>
                 <div class="project-card animated-item">
                     <div class="p-6">
                         <h3 class="text-2xl font-semibold text-primary mb-3">Data-Driven Performance Analytics</h3>
                         <p class="text-primary/70 mb-4">Utilized analytics to evaluate supply chain performance, identify bottlenecks, &amp; inform strategic optimization for continuous improvement.</p>
                     </div>
-                    <!-- Updated image styling -->
-                    <img src="images/data.png" alt="Supply Chain Analytics Dashboard" class="rounded-b-2xl w-full h-64 object-cover"/>
+                    <img src="images/data.png" alt="Supply Chain Analytics Dashboard" class="rounded-b-2xl w-full h-64 object-cover" onerror="this.onerror=null;this.src='https://placehold.co/600x350/FF0000/FFFFFF?text=Image+Error';"/>
                 </div>
                 <div class="project-card animated-item">
                     <div class="p-6">
                         <h3 class="text-2xl font-semibold text-primary mb-3">Integrated Order-to-Cash Cycle</h3>
                         <p class="text-primary/70 mb-4">Engineered a seamless order fulfillment process by integrating sales &amp; inventory modules for complete, end-to-end visibility.</p>
                     </div>
-                    <!-- Updated image styling -->
-                    <img src="images/o2c.png" alt="Order Fulfillment Process" class="rounded-b-2xl w-full h-64 object-cover"/>
+                    <img src="images/o2c.png" alt="Order Fulfillment Process" class="rounded-b-2xl w-full h-64 object-cover" onerror="this.onerror=null;this.src='https://placehold.co/600x350/FF0000/FFFFFF?text=Image+Error';"/>
                 </div>
             </div>
         </section>
@@ -721,7 +718,6 @@
         let i = 0;
         function typeWriter() {
             if (i < textToType.length) {
-                // Corrected typo here: typewriterwriterElement to typewriterElement
                 if (textToType.substring(i, i+1) === ',') {
                      typewriterElement.innerHTML += ',<br class="hidden md:inline">';
                 } else { typewriterElement.innerHTML += textToType.charAt(i); }
@@ -784,6 +780,11 @@
                 img.src = path;
                 img.alt = altTexts[index];
                 img.classList.add('carousel-img');
+                // Add onerror for dynamically loaded images
+                img.onerror = function() {
+                    this.onerror = null; // Prevent infinite loop if placeholder also fails
+                    this.src = 'https://placehold.co/600x350/FF0000/FFFFFF?text=Image+Error';
+                };
                 carouselTrack.appendChild(img);
 
                 const dot = document.createElement('span');
