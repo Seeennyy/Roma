@@ -398,9 +398,12 @@
                     <!-- Image Carousel for MegaSoft -->
                     <div class="carousel-container" data-autoplay-interval="5000">
                         <div class="carousel-track">
-                            <img src="https://placehold.co/600x350/F8E8EE/4A2731?text=MegaSoft+Img+1" alt="MegaSoft Internship Image 1" class="carousel-img">
-                            <img src="https://placehold.co/600x350/E6A4B4/4A2731?text=MegaSoft+Img+2" alt="MegaSoft Internship Image 2" class="carousel-img">
-                            <img src="https://placehold.co/600x350/C88EA7/FFF5F7?text=MegaSoft+Img+3" alt="MegaSoft Internship Image 3" class="carousel-img">
+                            <img src="images/m1.jpg" alt="MegaSoft Internship Image 1" class="carousel-img">
+                            <img src="images/m2.jpg" alt="MegaSoft Internship Image 2" class="carousel-img">
+                            <img src="images/m3.jpg" alt="MegaSoft Internship Image 3" class="carousel-img">
+                            <img src="images/m4.jpg" alt="MegaSoft Internship Image 4" class="carousel-img">
+                            <img src="images/m5.jpeg" alt="MegaSoft Internship Image 5" class="carousel-img">
+                            <img src="images/m6.jpeg" alt="MegaSoft Internship Image 6" class="carousel-img">
                         </div>
                         <button class="carousel-btn prev-btn">
                             <i class="fas fa-chevron-left text-primary"></i>
@@ -433,8 +436,9 @@
                     <!-- Image Carousel for Global Academy -->
                     <div class="carousel-container" data-autoplay-interval="5000">
                         <div class="carousel-track">
-                            <img src="https://placehold.co/600x350/F8E8EE/4A2731?text=Global+Academy+Img+1" alt="Global Academy DBA Image 1" class="carousel-img">
-                            <img src="https://placehold.co/600x350/E6A4B4/4A2731?text=Global+Academy+Img+2" alt="Global Academy DBA Image 2" class="carousel-img">
+                            <img src="images/j1.png" alt="Global Academy DBA Image 1" class="carousel-img">
+                            <img src="images/j2.jpeg" alt="Global Academy DBA Image 2" class="carousel-img">
+                            <img src="images/j3.jpeg" alt="Global Academy DBA Image 3" class="carousel-img">
                         </div>
                         <button class="carousel-btn prev-btn">
                             <i class="fas fa-chevron-left text-primary"></i>
@@ -457,16 +461,17 @@
                             <li>Installing Oracle Linux 7 &amp; preparing the environment</li>
                             <li>Installing &amp; creating Oracle Database instances</li>
                             <li>Performing patch management tasks using OPatch</li>
-                            <li>Practicing day-to-day DBA tasks such as monitoring, user creation, &amp; system configuration</li>
+                            <li>Practicing day-to-day DBA tasks suchs as monitoring, user creation, &amp; system configuration</li>
                         </ul>
                         <p class="text-primary/70">This internship provided crucial hands-on experience, solidifying my foundational knowledge in Oracle DBA with real-world operational tasks.</p>
                     </div>
                     <!-- Image Carousel for Raly IT -->
                     <div class="carousel-container" data-autoplay-interval="5000">
                         <div class="carousel-track">
-                            <img src="https://placehold.co/600x350/F8E8EE/4A2731?text=Raly+IT+Img+1" alt="Raly IT Internship Image 1" class="carousel-img">
-                            <img src="https://placehold.co/600x350/E6A4B4/4A2731?text=Raly+IT+Img+2" alt="Raly IT Internship Image 2" class="carousel-img">
-                            <img src="https://placehold.co/600x350/C88EA7/FFF5F7?text=Raly+IT+Img+3" alt="Raly IT Internship Image 3" class="carousel-img">
+                            <img src="images/r1.jpeg" alt="Raly IT Internship Image 1" class="carousel-img">
+                            <img src="images/r2.jpeg" alt="Raly IT Internship Image 2" class="carousel-img">
+                            <img src="images/r3.jpeg" alt="Raly IT Internship Image 3" class="carousel-img">
+                            <img src="images/r4.jpeg" alt="Raly IT Internship Image 4" class="carousel-img">
                         </div>
                         <button class="carousel-btn prev-btn">
                             <i class="fas fa-chevron-left text-primary"></i>
@@ -596,8 +601,46 @@
             let autoplayInterval;
             const autoplayDelay = parseInt(container.dataset.autoplayInterval) || 5000; // Get delay from data attribute, default to 5000ms
 
-            // Create dots
-            images.forEach((_, index) => {
+            // Clear existing dots and images
+            dotsContainer.innerHTML = '';
+            carouselTrack.innerHTML = '';
+
+            // Define images based on carousel container ID
+            let imagePaths = [];
+            let altTexts = [];
+            if (container.closest('.project-card').querySelector('h3').textContent.includes('MegaSoft IT Training')) {
+                imagePaths = [
+                    'images/m1.jpg', 'images/m2.jpg', 'images/m3.jpg',
+                    'images/m4.jpg', 'images/m5.jpeg', 'images/m6.jpeg'
+                ];
+                altTexts = [
+                    'MegaSoft Internship Image 1', 'MegaSoft Internship Image 2', 'MegaSoft Internship Image 3',
+                    'MegaSoft Internship Image 4', 'MegaSoft Internship Image 5', 'MegaSoft Internship Image 6'
+                ];
+            } else if (container.closest('.project-card').querySelector('h3').textContent.includes('Oracle Database Administration')) {
+                imagePaths = [
+                    'images/j1.png', 'images/j2.jpeg', 'images/j3.jpeg'
+                ];
+                altTexts = [
+                    'Global Academy DBA Image 1', 'Global Academy DBA Image 2', 'Global Academy DBA Image 3'
+                ];
+            } else if (container.closest('.project-card').querySelector('h3').textContent.includes('Raly IT Internship')) {
+                imagePaths = [
+                    'images/r1.jpeg', 'images/r2.jpeg', 'images/r3.jpeg', 'images/r4.jpeg'
+                ];
+                altTexts = [
+                    'Raly IT Internship Image 1', 'Raly IT Internship Image 2', 'Raly IT Internship Image 3', 'Raly IT Internship Image 4'
+                ];
+            }
+
+            // Populate carousel with new images and create dots
+            imagePaths.forEach((path, index) => {
+                const img = document.createElement('img');
+                img.src = path;
+                img.alt = altTexts[index];
+                img.classList.add('carousel-img');
+                carouselTrack.appendChild(img);
+
                 const dot = document.createElement('span');
                 dot.classList.add('dot');
                 dot.dataset.index = index;
@@ -609,10 +652,13 @@
                 dots.push(dot);
             });
 
+            // Re-select images after populating
+            const updatedImages = container.querySelectorAll('.carousel-img');
+
             function showImage(index) {
                 if (index < 0) {
-                    currentIndex = images.length - 1;
-                } else if (index >= images.length) {
+                    currentIndex = updatedImages.length - 1;
+                } else if (index >= updatedImages.length) {
                     currentIndex = 0;
                 } else {
                     currentIndex = index;
